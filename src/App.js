@@ -9,12 +9,12 @@ function App() {
 
   const fetchData = async() =>{
     try{
-      const response = await fetch(`https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json`)
+      const response = await fetch(`https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members`)
       const result = await response.json();
       console.log(result)
       setData(result)
     }catch(error){
-      console.error("failed to fetch data")
+      console.error("failed to fetch data", error)
     }
   }
 
