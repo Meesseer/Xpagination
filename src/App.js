@@ -10,13 +10,11 @@ function App() {
   const fetchData = async() =>{
     try {
       const response = await fetch(`https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json`);
-      if (!response.ok) {
-        throw new Error("failed to fetch data");
-      }
       const result = await response.json();
       setData(result);
     } catch (error) {
       console.error("fetchDataFailed", error);
+      alert("failed to fetch data");
     }
   }
 
